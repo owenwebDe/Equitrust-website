@@ -113,7 +113,7 @@ const Footer = () => {
             <div>
               <p className="text-zinc-400 text-sm mb-2">Contract Address (BSC)</p>
               <code className="text-blue-400 font-mono text-sm break-all">
-                0x3303113001c51769f2753C2aFb7B5a6d0535660E
+                0xfEcb15A1810F80Ce6E562c172359565774F47EE8
               </code>
             </div>
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

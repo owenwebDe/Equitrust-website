@@ -15,7 +15,7 @@ const PriceDisplay = () => {
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [chartType, setChartType] = useState<'poocoin' | 'dexscreener'>('dexscreener');
 
-  const contractAddress = "0x3303113001c51769f2753C2aFb7B5a6d0535660E";
+  const contractAddress = "0xfEcb15A1810F80Ce6E562c172359565774F47EE8";
 
   const fetchPriceData = async () => {
     try {

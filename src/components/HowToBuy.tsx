@@ -3,7 +3,7 @@ import { Wallet, ArrowRight, Copy, Check, ExternalLink, Shield, Clock } from 'lu
 
 const HowToBuy = () => {
   const [copiedStep, setCopiedStep] = useState<number | null>(null);
-  const contractAddress = "0x3303113001c51769f2753C2aFb7B5a6d0535660E";
+  const contractAddress = "0xfEcb15A1810F80Ce6E562c172359565774F47EE8";
 
   const copyToClipboard = (text: string, step: number) => {
     navigator.clipboard.writeText(text);
