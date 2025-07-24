@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageCircle, Users, Bell, Heart } from 'lucide-react';
 
 const Community = () => {
@@ -96,7 +95,7 @@ const Community = () => {
               Start Mining Now
             </button>
             <a 
-              href="/EquitrustAi.apk" 
+              href="/application-b8cc3892-b53e-4341-9881-15c91e6333d1.apk" 
               download
               className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-200 inline-block text-center"
             >

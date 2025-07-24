@@ -59,9 +59,13 @@ const NewFeatures = () => {
               Download our mining app for iOS (coming soon) and Android (APK available now). Play Store and App Store launches coming soon.
             </p>
             <div className="space-y-2">
-              <button className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+              <a 
+                href="/application-b8cc3892-b53e-4341-9881-15c91e6333d1.apk" 
+                download
+                className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 inline-block text-center"
+              >
                 Download APK
-              </button>
+              </a>
               <button className="w-full bg-slate-600 text-slate-400 px-6 py-3 rounded-lg cursor-not-allowed" disabled>
                 iOS Coming Soon
               </button>
