@@ -1,9 +1,13 @@
-import React from 'react';
+import { useState } from 'react';
 import { ArrowRight, Copy, Check, Sparkles, TrendingUp, Zap, Play } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 
-const Hero = () => {
-  const [copied, setCopied] = React.useState(false);
+interface HeroProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const Hero = ({ setCurrentPage }: HeroProps) => {
+  const [copied, setCopied] = useState(false);
   const contractAddress = "0xfEcb15A1810F80Ce6E562c172359565774F47EE8";
 
   const copyToClipboard = () => {
@@ -46,8 +50,8 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <a 
-                  href="#features" 
+                <button 
+                  onClick={() => setCurrentPage?.('download')}
                   className="group bg-white text-black text-lg md:text-xl font-bold px-6 md:px-8 py-3 md:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
                 >
                   <div className="flex items-center justify-center">
@@ -55,7 +59,7 @@ const Hero = () => {
                     Start Mining Now
                     <ArrowRight className="ml-2 md:ml-3 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </a>
+                </button>
                 <a 
                   href="#swap" 
                   className="group bg-transparent border-2 border-white text-white text-lg md:text-xl font-semibold px-6 md:px-8 py-3 md:py-4 rounded-2xl transition-all duration-300 hover:bg-white hover:text-black flex items-center justify-center"

@@ -16,7 +16,7 @@ interface HomeProps {
 const Home = ({ setCurrentPage }: HomeProps) => {
   return (
     <main>
-      <Hero />
+      <Hero setCurrentPage={setCurrentPage} />
       <PancakeSwapWidget />
       <Features />
       <PriceDisplay />
