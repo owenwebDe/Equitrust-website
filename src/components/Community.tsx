@@ -1,6 +1,10 @@
 import { MessageCircle, Users, Bell, Heart } from 'lucide-react';
 
-const Community = () => {
+interface CommunityProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const Community = ({ setCurrentPage }: CommunityProps) => {
   const communityStats = [
     {
       icon: <Users className="h-8 w-8" />,
@@ -94,13 +98,12 @@ const Community = () => {
             <button className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-green-600 transition-all duration-200 transform hover:scale-105">
               Start Mining Now
             </button>
-            <a 
-              href="/application-b8cc3892-b53e-4341-9881-15c91e6333d1.apk" 
-              download
-              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-200 inline-block text-center"
+            <button 
+              onClick={() => setCurrentPage?.('download')}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-200"
             >
               Download Mining App
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
-import React from 'react';
 import { TrendingUp, Smartphone, ArrowLeftRight } from 'lucide-react';
 
-const NewFeatures = () => {
+interface NewFeaturesProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const NewFeatures = ({ setCurrentPage }: NewFeaturesProps) => {
   return (
     <section id="trading" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
       <div className="max-w-7xl mx-auto">
@@ -59,13 +62,12 @@ const NewFeatures = () => {
               Download our mining app for iOS (coming soon) and Android (APK available now). Play Store and App Store launches coming soon.
             </p>
             <div className="space-y-2">
-              <a 
-                href="/application-b8cc3892-b53e-4341-9881-15c91e6333d1.apk" 
-                download
-                className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 inline-block text-center"
+              <button 
+                onClick={() => setCurrentPage?.('download')}
+                className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
               >
                 Download APK
-              </a>
+              </button>
               <button className="w-full bg-slate-600 text-slate-400 px-6 py-3 rounded-lg cursor-not-allowed" disabled>
                 iOS Coming Soon
               </button>

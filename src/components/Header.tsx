@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap, ChevronDown } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  currentPage: string;
+  setCurrentPage: (page: string) => void;
+}
+
+const Header = ({ currentPage, setCurrentPage }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,7 +43,13 @@ const Header = () => {
         { href: '#developers', label: 'Developers' }
       ]
     },
-    { href: '#how-to-buy', label: 'Get Started', single: true }
+    { href: '#how-to-buy', label: 'Get Started', single: true },
+    { 
+      onClick: () => setCurrentPage('download'), 
+      label: 'Download App', 
+      single: true, 
+      isButton: true 
+    }
   ];
 
   return (
@@ -116,12 +127,21 @@ const Header = () => {
             {navItems.map((item, index) => (
               <div key={index} className="relative group">
                 {item.single ? (
-                  <a
-                    href={item.href}
-                    className="text-zinc-300 hover:text-white font-medium transition-colors duration-200"
-                  >
-                    {item.label}
-                  </a>
+                  item.isButton ? (
+                    <button
+                      onClick={item.onClick}
+                      className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-green-600 transition-all duration-200"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-zinc-300 hover:text-white font-medium transition-colors duration-200"
+                    >
+                      {item.label}
+                    </a>
+                  )
                 ) : (
                   <>
                     <button className="flex items-center space-x-1 text-zinc-300 hover:text-white font-medium transition-colors duration-200">
@@ -175,13 +195,25 @@ const Header = () => {
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.single ? (
-                    <a
-                      href={item.href}
-                      className="block py-3 text-zinc-300 hover:text-white font-medium transition-colors duration-200 text-base"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </a>
+                    item.isButton ? (
+                      <button
+                        onClick={() => {
+                          item.onClick?.();
+                          setIsMenuOpen(false);
+                        }}
+                        className="w-full bg-gradient-to-r from-blue-600 to-green-500 text-white px-4 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-green-600 transition-all duration-200 text-base"
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="block py-3 text-zinc-300 hover:text-white font-medium transition-colors duration-200 text-base"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    )
                   ) : (
                     <div>
                       <div className="py-3 text-white font-medium border-b border-zinc-800 mb-2 text-base">

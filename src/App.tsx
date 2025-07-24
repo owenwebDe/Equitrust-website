@@ -1,20 +1,14 @@
-import React from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import VisualFeatures from './components/VisualFeatures';
+import Home from './components/Home';
+import Download from './components/Download';
 import ParticleSystem from './components/ParticleSystem';
-import PancakeSwapWidget from './components/PancakeSwapWidget';
-import PriceDisplay from './components/PriceDisplay';
-import HowToBuy from './components/HowToBuy';
-import NewFeatures from './components/NewFeatures';
-import Tokenomics from './components/Tokenomics';
-import Roadmap from './components/Roadmap';
-import Community from './components/Community';
 import Footer from './components/Footer';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       <ParticleSystem />
@@ -28,19 +22,9 @@ function App() {
           }
         }}
       />
-      <Header />
-      <main>
-        <Hero />
-        <PancakeSwapWidget />
-        <Features />
-        <PriceDisplay />
-        <HowToBuy />
-        <VisualFeatures />
-        <NewFeatures />
-        <Tokenomics />
-        <Roadmap />
-        <Community />
-      </main>
+      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      {currentPage === 'home' && <Home setCurrentPage={setCurrentPage} />}
+      {currentPage === 'download' && <Download />}
       <Footer />
     </div>
   );
