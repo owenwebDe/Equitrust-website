@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
   setCurrentPage: (page: string) => void;
 }
 
-const Header = ({ currentPage, setCurrentPage }: HeaderProps) => {
+const Header = ({ setCurrentPage }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

@@ -11,7 +11,8 @@ const PancakeSwapWidget = () => {
         width="100%"
         height="100%"
         style={{ border: "none" }}
-        allow="clipboard-read; clipboard-write"
+        allow="clipboard-read; clipboard-write; web-share; camera; microphone; display-capture; fullscreen; geolocation; gyroscope; accelerometer; encrypted-media; autoplay; picture-in-picture"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
         title="PancakeSwap Trading Platform"
         className="w-full h-full min-h-screen"
       />

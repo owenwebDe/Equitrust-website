@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Copy, Check, Sparkles, TrendingUp, Zap, Play } from 'lucide-react';
+import { ArrowRight, Copy, Check, Sparkles, Zap, Play, MessageCircle } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 
 interface HeroProps {
@@ -66,6 +66,15 @@ const Hero = ({ setCurrentPage }: HeroProps) => {
                 >
                   <Play className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
                   Trade $EQAI
+                </a>
+                <a 
+                  href="https://t.me/EqutrustAIbot" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-blue-500 hover:bg-blue-600 text-white text-lg md:text-xl font-semibold px-6 md:px-8 py-3 md:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-xl"
+                >
+                  <MessageCircle className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
+                  AI Chat Bot
                 </a>
               </div>
             </div>
