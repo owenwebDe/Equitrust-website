@@ -27,12 +27,6 @@ const Hero = ({ setCurrentPage }: HeroProps) => {
             
             {/* Left Side - Main Content */}
             <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
-              {/* Coming Soon Badge */}
-              <div className="inline-flex items-center bg-white/10 border border-white/20 rounded-full px-4 md:px-6 py-2 md:py-3 backdrop-blur-sm">
-                <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-white mr-2" />
-                <span className="text-xs md:text-sm font-medium text-white">AI Trading Bot Launching Soon</span>
-              </div>
-
               {/* Main Heading */}
               <div className="space-y-3 md:space-y-4">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight">

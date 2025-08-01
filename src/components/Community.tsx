@@ -34,9 +34,8 @@ const Community = ({ setCurrentPage }: CommunityProps) => {
 
   const socialLinks = [
     { platform: 'Telegram', url: 'https://t.me/+4m0z6t2nDsBmYTc0', color: 'bg-blue-500 hover:bg-blue-600' },
-    { platform: 'Discord', url: '#', color: 'bg-indigo-500 hover:bg-indigo-600' },
     { platform: 'Twitter', url: 'https://x.com/equitrustai', color: 'bg-sky-500 hover:bg-sky-600' },
-    { platform: 'Medium', url: '#', color: 'bg-gray-600 hover:bg-gray-700' }
+    { platform: 'YouTube', url: 'https://www.youtube.com/@EquiTrust-AI', color: 'bg-red-500 hover:bg-red-600' }
   ];
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Github, Twitter, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Youtube, Twitter, MessageCircle, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,8 +37,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Twitter, href: 'https://x.com/equitrustai', label: 'Twitter' },
     { icon: MessageCircle, href: 'https://t.me/+4m0z6t2nDsBmYTc0', label: 'Telegram' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Globe, href: '#', label: 'Website' }
+    { icon: Youtube, href: 'https://www.youtube.com/@EquiTrust-AI', label: 'YouTube' }
   ];
 
   return (
